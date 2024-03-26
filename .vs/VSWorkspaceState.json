@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\config",
+    "\\src\\controllers",
+    "\\src\\helpers",
+    "\\src\\models",
+    "\\src\\public",
+    "\\src\\routes",
+    "\\src\\services",
+    "\\src\\views"
+  ],
+  "SelectedNode": "\\src\\controllers\\lineasController.js",
+  "PreviewInSolutionExplorer": false
+}
