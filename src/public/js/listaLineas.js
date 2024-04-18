@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', (e) => {
-    fetch('http://localhost:3000/listLineas')
+    fetch('https://kaypiadmin3-z5xp9o37.b4a.run/listLineas')
     .then(res => res.json())
     .then(data =>{
       if(data.response === 'success'){
