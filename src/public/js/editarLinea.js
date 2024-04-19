@@ -221,7 +221,7 @@ var ruta1;
 var ruta2;
 //Carga los datos de listLineas con la diferencia que busca a una similitud de ids para cargar la linea que se requiere modiicar
 window.addEventListener('DOMContentLoaded', (e) =>{
-	fetch('http://localhost:3000/listLineas')
+	fetch('https://kaypi-0aad18445e35.herokuapp.com/listLineas')
 	.then(res => res.json())
 	.then(data =>{
 		if(data.response === 'success'){
