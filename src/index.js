@@ -327,3 +327,53 @@ app.post('/eliminarPuntoEstrategico', isAuthenticated, function (req, res) {
     res.redirect('/listaPuntosEstrategicos');
 });
 
+/* Notificaciones */
+const Notificaciones = require('./models/Notificaciones');
+
+const { consultaNotificaciones } = require('./controllers/notificacionesController');
+
+app.use(require('./routes/notificacionesRoute'));
+
+app.get('/listaNotificaciones', isAuthenticated, async (req, res) => {
+    try {
+        const notificaciones = await Notificaciones.find().lean();
+        res.render('notificaciones/listaNotificaciones', { notificaciones });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error al obtener las notificaciones' });
+    }
+});
+
+
+app.get('/listaNotificaciones/agregarNotificacion', isAuthenticated, (req, res) => {
+    res.render('notificaciones/agregarNotificacion');
+});
+
+app.post('/listaNotificaciones/agregarNotificacion/guardarNotificacion', isAuthenticated, async (req, res) => {
+    const { nombreLinea, descripcion, fechaInicio, fechaFin } = req.body;
+    const nuevaNotificacion = new Notificaciones({
+        nombreLinea,
+        descripcion,
+        fechaInicio,
+        fechaFin
+    });
+
+    await nuevaNotificacion.save();
+    res.redirect('/listaNotificaciones');
+});
+
+app.get('/notificacion/:id', isAuthenticated, async (req, res) => {
+    const notificacionId = await Notificaciones.findById(req.params.id).lean();
+    res.render('notificaciones/editarNotificacion', { notificacionId });
+});
+
+app.post('/editarNotificacion', isAuthenticated, async (req, res) => {
+    const { id, nombreLinea, descripcion, fechaInicio, fechaFin } = req.body;
+    await Notificaciones.findByIdAndUpdate(id, { nombreLinea, descripcion, fechaInicio, fechaFin });
+    res.redirect('/listaNotificaciones');
+});
+
+app.post('/eliminarNotificacion', isAuthenticated, async (req, res) => {
+    await Notificaciones.findByIdAndDelete(req.body.id);
+    res.redirect('/listaNotificaciones');
+});

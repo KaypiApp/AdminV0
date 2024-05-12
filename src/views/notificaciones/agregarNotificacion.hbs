@@ -1,0 +1,52 @@
+{{> navegacion }}
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="/listaNotificaciones" id="back">
+                    <i class="big arrow circle left icon"></i>
+                </a>
+                <a href="/inicio" id="backHome">
+                    <i class="big home icon"></i>
+                </a>
+            </div>
+        </div>
+        <br>
+        <form class="ui form" action="/listaNotificaciones/agregarNotificacion/guardarNotificacion" method="post" id="formPrincipal">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <h2>Características</h2>
+                        <div class="field">
+                            <label>Nombre de la línea</label>
+                            <div class="form-group row">
+                                <label for="nombreLinea" class="col-md-3 col-form-label">Nombre</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="nombreLinea" name="nombreLinea" placeholder="Nombre de la Línea">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Descripción de la notificación</label>
+                            <textarea name="descripcion" id="descripcion" placeholder="Descripción"></textarea>
+                        </div>
+                        <div class="field">
+                            <label>Fecha de envío de la notificación</label>
+                            <input type="datetime-local" name="fechaInicio" id="fechaInicio">
+                        </div>
+                        <div class="field">
+                            <label>Fecha de caducidad</label>
+                            <input type="datetime-local" name="fechaFin" id="fechaFin">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <input class="ui button btnSubmit" id="btnSubmit" type="submit" value="Registrar">
+            <br>
+            <div class="ui error message"></div>
+        </form>
+    </div>
+</main>
+<script src="/js/agregarNotificacion.js"></script>
+<link rel="stylesheet" href="/css/agregarNotificacionStyle.css">

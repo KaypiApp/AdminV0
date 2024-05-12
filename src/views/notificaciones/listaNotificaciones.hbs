@@ -1,0 +1,85 @@
+{{> navegacion }}
+
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="/inicio" id="back">
+                    <i class="big arrow circle left icon"></i>
+                </a>
+            </div>
+        </div>
+        <div class="row" id="spaceBackAdd">
+            <div class="col-md-12 text-end">
+                <a href="/listaNotificaciones/agregarNotificacion" id="addNotification">
+                    <i class="big plus circle icon"></i>
+                    <label>Añadir</label>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table" id="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center text-white">Nro.</th>
+                                <th class="text-center text-white">Nombre de la línea</th>
+                                <th class="text-center text-white">Descripción de la Notificación</th>
+                                <th class="text-center text-white">Fecha de envío de notificación</th>
+                                <th class="text-center text-white">Fecha de caducidad</th>
+                                <th class="text-center text-white">Modificar</th>
+                                <th class="text-center text-white">Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listaNotificacionesDatos">
+                            {{#each notificaciones}}
+                            <tr>
+                                <td class="text-center">{{@index}}</td>
+                                <td class="text-center">{{nombreLinea}}</td>
+                                <td class="text-center">{{descripcion}}</td>
+                                <td class="text-center">{{fechaInicio}}</td>
+                                <td class="text-center">{{fechaFin}}</td>
+                                <td class="text-center">
+                                    <a href="/listaNotificaciones/editarNotificacion/{{_id}}" class="ui yellow icon button">
+                                        <i class="edit outline icon"></i>
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <button type="button" class="ui red icon button" data-bs-toggle="modal" data-bs-target="#exampleModal{{_id}}">
+                                        <i class="trash alternate outline icon"></i>
+                                    </button>
+                                    <div class="modal fade" id="exampleModal{{_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h2 class="modal-title" id="exampleModalLabel">Eliminar Notificación</h2>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <br>
+                                                    <p>¿Estás seguro de que deseas eliminar la notificación <b>{{nombreLinea}}</b>?</p>
+                                                    <small>* Esta acción es irreversible</small>
+                                                </div>
+                                                <br>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="ui teal button" data-bs-dismiss="modal">Cancelar</button>
+                                                    <form action="/listaNotificaciones/eliminarNotificacion/{{_id}}" method="POST">
+                                                        <button type="submit" class="ui red button" name="submit">Eliminar</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>              
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<link rel="stylesheet" href="/css/listaNotificacionesStyle.css">
+<script src="/js/listaNotificaciones.js"></script>
