@@ -1,42 +1,43 @@
-/* Estilos para la tabla de notificaciones */
 #table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ddd;
-  }
+  margin-top: 25px;
+  font-family: 'Comfortaa', cursive;
+}
+#spaceBackAdd {
+  margin-top: 80px;
+}
+#back {
+  color: #003d94;
+}
+#back:hover {
+  color: #000d21;
+  transition: 3s;
+}
+#addLine {
+  color: #003d94;
+}
+#addLine label {
+  font-family: 'Comfortaa', cursive;
+}
+#addLine:hover {
+  color: #000d21;
+  transition: 3s;
+}
+thead {
+  background-color: #000000;
+  text-decoration: #ffffff;
+}
+
+.row{
+    background-position: center;
+}
   
-  #table th, #table td {
-    padding: 8px;
-    text-align: center;
-  }
-  
-  #table th {
-    background-color: #000d21; /* Azul */
-    color: white;
-  }
-  
-  #table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  #table tr:hover {
-    background-color: #ddd;
-  }
-  
-  #addNotification {
-    color: #003d94; /* Verde */
-  }
-  
-  #addNotification:hover {
-    color: #003d94; /* Verde más oscuro */
-  }
-  
-  #back {
-    color: #000d21; /* Rojo */
-  }
-  
-  #back:hover {
-    color: #000d21; /* Rojo más oscuro */
-  }
-  
-  
+main{
+  background-position: center;
+}
+
+.table-responsive{
+  background-position: center;
+}
+table{
+  background-position: center;
+}
