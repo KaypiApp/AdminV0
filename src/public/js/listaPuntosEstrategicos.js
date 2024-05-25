@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', (e) =>{
-	fetch('https://kaypi-0aad18445e35.herokuapp.com/listPuntos')
+	fetch('https://kaypi-fb8a2735368d.herokuapp.com/listPuntos')
 	.then(res => res.json())
 	.then(data =>{
 		if(data.response === 'success'){
