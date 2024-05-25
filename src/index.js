@@ -328,11 +328,8 @@ app.post('/eliminarPuntoEstrategico', isAuthenticated, function (req, res) {
 });
 
 /* Notificaciones */
+
 const Notificaciones = require('./models/Notificaciones');
-
-const { consultaNotificaciones } = require('./controllers/notificacionesController');
-
-app.use(require('./routes/notificacionesRoute'));
 
 app.get('/listaNotificaciones', isAuthenticated, async (req, res) => {
     try {
@@ -344,36 +341,67 @@ app.get('/listaNotificaciones', isAuthenticated, async (req, res) => {
     }
 });
 
-
 app.get('/listaNotificaciones/agregarNotificacion', isAuthenticated, (req, res) => {
     res.render('notificaciones/agregarNotificacion');
 });
 
 app.post('/listaNotificaciones/agregarNotificacion/guardarNotificacion', isAuthenticated, async (req, res) => {
-    const { nombreLinea, descripcion, fechaInicio, fechaFin } = req.body;
-    const nuevaNotificacion = new Notificaciones({
-        nombreLinea,
-        descripcion,
-        fechaInicio,
-        fechaFin
-    });
+    try {
+        const { nombreLinea, descripcion, fechaInicio, fechaFin } = req.body;
+        const nuevaNotificacion = new Notificaciones({
+            nombreLinea,
+            descripcion,
+            fechaInicio,
+            fechaFin
+        });
 
-    await nuevaNotificacion.save();
-    res.redirect('/listaNotificaciones');
+        await nuevaNotificacion.save();
+        res.redirect('/listaNotificaciones');
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error al guardar la notificación' });
+    }
 });
 
-app.get('/notificacion/:id', isAuthenticated, async (req, res) => {
-    const notificacionId = await Notificaciones.findById(req.params.id).lean();
-    res.render('notificaciones/editarNotificacion', { notificacionId });
+// Ruta para mostrar el formulario de edición de una notificación
+app.get('/listaNotificaciones/editarNotificacion/:id', isAuthenticated, async (req, res) => {
+    try {
+        const notificacionId = await Notificaciones.findById(req.params.id).lean();
+        if (!notificacionId) {
+            return res.status(404).json({ error: 'Notificación no encontrada' });
+        }
+        res.render('notificaciones/editarNotificacion', { notificacionId });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error al obtener la notificación' });
+    }
 });
 
-app.post('/editarNotificacion', isAuthenticated, async (req, res) => {
-    const { id, nombreLinea, descripcion, fechaInicio, fechaFin } = req.body;
-    await Notificaciones.findByIdAndUpdate(id, { nombreLinea, descripcion, fechaInicio, fechaFin });
-    res.redirect('/listaNotificaciones');
+app.post('/listaNotificaciones/editarNotificacion/:id', isAuthenticated, async (req, res) => {
+    try {
+        const { nombreNotificacion, descripcion, fechaInicio, fechaFin } = req.body;
+        const notificacionId = req.params.id;
+        const notificacionActualizada = await Notificaciones.findByIdAndUpdate(notificacionId, { nombreNotificacion, descripcion, fechaInicio, fechaFin }, { new: true });
+        if (!notificacionActualizada) {
+            return res.status(404).json({ error: 'Notificación no encontrada' });
+        }
+        res.status(200).json({ message: 'Notificación actualizada', notificacion: notificacionActualizada });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error al actualizar la notificación' });
+    }
 });
 
-app.post('/eliminarNotificacion', isAuthenticated, async (req, res) => {
-    await Notificaciones.findByIdAndDelete(req.body.id);
-    res.redirect('/listaNotificaciones');
+
+app.post('/listaNotificaciones/eliminarNotificacion/:id', isAuthenticated, async (req, res) => {
+    try {
+        const notificacion = await Notificaciones.findByIdAndDelete(req.params.id);
+        if (!notificacion) {
+            return res.status(404).json({ error: 'Notificación no encontrada' });
+        }
+        res.redirect('/listaNotificaciones');
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Error al eliminar la notificación' });
+    }
 });

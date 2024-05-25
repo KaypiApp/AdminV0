@@ -13,18 +13,18 @@
             </div>
         </div>
         <br>
-        <form class="ui form" action="/editarNotificacion" method="post" id="formPrincipal">
-            <input name="_id" id="_id" value="{{ notificacionId._id }}" hidden>
+        <form class="ui form" action="/editarNotificacion/{{notificacionId._id}}" method="post" id="formPrincipal">
+            <input name="_id" id="_id" value="{{ notificacionId._id }}" type="hidden">
             <div class="row">
                 <div class="col-md-6">
                     <div class="card">
                         <h2>Características</h2>
                         <div class="field">
-                            <label>Nombre de la línea</label>
+                            <label>Nombre de la notificación</label>
                             <div class="form-group row">
-                                <label for="nombreLinea" class="col-md-3 col-form-label">Nombre</label>
+                                <label for="nombreNotificacion" class="col-md-3 col-form-label">Nombre</label>
                                 <div class="col-md-9">
-                                    <input type="text" id="nombreLinea" name="nombreLinea" value="{{ notificacionId.nombreLinea }}" placeholder="Nombre de la Línea">
+                                    <input type="text" id="nombreNotificacion" name="nombreNotificacion" value="{{ notificacionId.nombreNotificacion }}" placeholder="Nombre de la notificación">
                                 </div>
                             </div>
                         </div>
@@ -33,12 +33,12 @@
                             <textarea name="descripcion" id="descripcion" placeholder="Descripción">{{ notificacionId.descripcion }}</textarea>
                         </div>
                         <div class="field">
-                            <label>Fecha de envío de la notificación</label>
-                            <input type="datetime-local" name="fechaInicio" id="fechaInicio" value="{{ notificacionId.fechaInicio }}">
+                            <label>Fecha de inicio</label>
+                            <input type="date" name="fechaInicio" id="fechaInicio" value="{{ notificacionId.fechaInicio }}">
                         </div>
                         <div class="field">
-                            <label>Fecha de caducidad</label>
-                            <input type="datetime-local" name="fechaFin" id="fechaFin" value="{{ notificacionId.fechaFin }}">
+                            <label>Fecha de fin</label>
+                            <input type="date" name="fechaFin" id="fechaFin" value="{{ notificacionId.fechaFin }}">
                         </div>
                     </div>
                 </div>
