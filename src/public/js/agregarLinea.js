@@ -214,7 +214,6 @@ $(function(){
 });
 
 //Ir una ventana atras del historial
-//hola
 function goBack() {
    window.history.back();
  }
