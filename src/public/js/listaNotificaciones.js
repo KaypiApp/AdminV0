@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:3000/listaNotificaciones/listarNotificaciones')
+    fetch('/listaNotificaciones/listarNotificaciones')
         .then(res => res.json())
         .then(data => {
             if (data.response === 'success') {
@@ -62,8 +62,6 @@ window.addEventListener('DOMContentLoaded', () => {
         const year = d.getFullYear();
         const month = ('0' + (d.getMonth() + 1)).slice(-2);
         const day = ('0' + d.getDate()).slice(-2);
-        const hours = ('0' + d.getHours()).slice(-2);
-        const minutes = ('0' + d.getMinutes()).slice(-2);
-        return `${day}/${month}/${year} ${hours}:${minutes}`;
+        return `${day}/${month}/${year}`;
     }
 });

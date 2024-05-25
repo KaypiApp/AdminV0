@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', (e) => {
-    //fetch('https://kaypi-0aad18445e35.herokuapp.com/listLineas')
-    fetch('http://localhost:3000/listLineas')
+    fetch('https://kaypi-0aad18445e35.herokuapp.com/listLineas')
+    //fetch('http://localhost:3000/listLineas')
     .then(res => res.json())
     .then(data =>{
       if(data.response === 'success'){

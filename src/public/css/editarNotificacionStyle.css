@@ -32,21 +32,27 @@
 }
 
 form.ui.form {
-    width: 80%;
-    margin: 0 auto; /* Centrar horizontalmente */
+    width: 100%; /* Ensure form takes full width */
+    max-width: 1200px; /* Add a max-width to avoid overly large form */
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
 }
 
 #btnSubmit {
     width: 100%;
-    background-color: #003d94;
-    color: #ffffff;
+    background-color: #003d94; /* Set button background color */
+    color: #ffffff; /* Set button text color */
     font-family: 'Comfortaa', cursive;
+    border: none; /* Ensure no border */
+    border-radius: 5px; /* Optional: add border-radius */
+    padding: 10px; /* Optional: add padding for better look */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
 #btnSubmit:hover {
-    background-color: #000d21;
-    transition: 1s;
-    color: #ffffff;
+    background-color: #000d21; /* Change background color on hover */
+    transition: 1s; /* Add transition effect */
+    color: #ffffff; /* Ensure text color stays white on hover */
 }
 
 h2 {
@@ -62,19 +68,19 @@ textarea {
     margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #003d94; /* Change border color */
     resize: none;
 }
 
 input[type="text"],
-input[type="datetime-local"] {
+input[type="date"] {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
     margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #003d94; /* Change border color */
 }
 
 .ui.form .field > label {
