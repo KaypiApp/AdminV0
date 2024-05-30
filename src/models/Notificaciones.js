@@ -12,3 +12,4 @@ const notificacionSchema = new Schema({
 }, { versionKey: false });
 
 module.exports = model('notificaciones', notificacionSchema);
+//aca se agrego nuevo atributo

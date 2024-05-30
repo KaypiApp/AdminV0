@@ -50,6 +50,7 @@ $(function(){
         }, {});
 
         // Agrega el atributo isSent con el valor false por defecto
+        //se agrego esto 
         data.isSent = false;
 
         guardarNotificacion(data);
