@@ -48,6 +48,10 @@ $(function(){
           obj[item.name] = item.value;
           return obj;
         }, {});
+
+        // Agrega el atributo isSent con el valor false por defecto
+        data.isSent = false;
+
         guardarNotificacion(data);
       });
 
