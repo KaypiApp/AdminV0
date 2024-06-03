@@ -4,7 +4,7 @@
 }
 .image-container{
     /*no se puede utizar codigo php en un archivo .css por eso esta linea se queda aqui*/
-    background: url('/img/imgBanner.jpg') center no-repeat;
+    background: url('/img/imagenBannner.png') center no-repeat;
     min-height: 100vh;
 }
 
