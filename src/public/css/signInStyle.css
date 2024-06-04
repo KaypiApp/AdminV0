@@ -16,7 +16,7 @@
     bottom: -15px;
     
 }
-
+/*se agrego stilos para el signin*/
 .card {
     width: 90%; 
     max-width: 550px; 
@@ -28,7 +28,7 @@
     left: 90px;
     bottom: -33px;
     border-radius: 15px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Agrega una sombra */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); 
 }
 
 
