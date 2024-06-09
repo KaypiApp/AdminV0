@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', (e) =>{
-	//fetch('https://kaypi-fb8a2735368d.herokuapp.com/listPuntos')
-	fetch('http://localhost:3000/listPuntos')
+	
+	//fetch('http://localhost:3000/listPuntos')
+	fetch('https://kaypi.onrender.com/listPuntos')
 	.then(res => res.json())
 	.then(data =>{
 		if(data.response === 'success'){
