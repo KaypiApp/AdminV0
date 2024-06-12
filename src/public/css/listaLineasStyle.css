@@ -3,7 +3,7 @@
     font-family: 'Comfortaa', cursive;
 }
 #spaceBackAdd {
-    margin-top: 80px;
+    margin-top: 1%;
 }
 #back {
     color: #003d94;
@@ -25,4 +25,47 @@
 thead {
     background-color: #000000;
     text-decoration: #ffffff;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    padding: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #0799B6;  /* Color plano para el fondo del título */
+    color: white;
+}
+
+.card-title {
+    font-size: 1.25em;
+    margin-bottom: 0;
+    color: white;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-text {
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin-right: 5px;
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
 }
