@@ -4,6 +4,7 @@
 }
 #spaceBackAdd {
   margin-top: 1px;
+  
 }
 #back {
   color: #003d94;
@@ -19,7 +20,7 @@
   font-family: 'Comfortaa', cursive;
 }
 #addLine:hover {
-  color: #000d21;
+  color: #210000;
   transition: 3s;
 }
 thead {
@@ -41,3 +42,55 @@ main{
 table{
   background-position: center;
 }
+
+.card-header {
+  padding: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #0799B6;  /* Color plano para el fondo del título */
+  color: white;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  margin-right: 10px;
+}
+
+.btn-warning {
+  background-color: #ece9e0;
+  border-color: #000000;
+}
+
+.btn-danger {
+  background-color: #ece9e0;
+  border-color: #000000;
+}
+
+.btn-danger2 {
+  background-color: #ea632e;
+  border-color: #000000;
+  color : white;
+}
+
+.me-2 {
+  margin-right: .5rem !important;
+}
+
+.modal-header {
+  background-color: #b8614f;
+  border-bottom: 1px solid #000000;
+  color: #ffffff;
+}
+
+.modal-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #000000;
+}
+
+
