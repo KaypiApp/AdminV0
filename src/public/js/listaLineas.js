@@ -15,10 +15,12 @@ window.addEventListener('DOMContentLoaded', (e) => {
               <div class="card-body">
                 <p class="card-text"><strong>Categoria:</strong> ${todo.Categoria}</p>
                 <p class="card-text"><strong>Horarios:</strong> ${todo.Horarios || 'N/A'}</p>
-                <div class="d-flex justify-content-between">
-                  <a href="/linea/${todo._id}" class="btn btn-warning"><i class="edit outline icon"></i> Modificar</a>
+                <div class="d-flex justify-content-end">
+                  <a href="/linea/${todo._id}" class="btn btn-warning me-2">
+                    <img src="/img/Editar.png" alt="Editar" style="height: 30px;">
+                  </a>
                   <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal${todo._id}">
-                    <i class="trash alternate outline icon"></i> Eliminar
+                    <img src="/img/Eliminacion.png" alt="Eliminar" style="height: 30px;">
                   </button>
                 </div>
               </div>
@@ -41,7 +43,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                   <form action="/eliminarLinea" method="post">
                     <input name="_id" value="${todo._id}" hidden>
-                    <button type="submit" class="btn btn-danger" name="submit">Eliminar</button>
+                    <button type="submit" class="btn btn-danger2" name="submit">Eliminar</button>
                   </form>
                 </div>
               </div>

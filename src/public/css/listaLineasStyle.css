@@ -56,16 +56,45 @@ thead {
     margin-bottom: 10px;
 }
 
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-end {
+    justify-content: flex-end !important;
+}
+
 .btn {
-    margin-right: 5px;
+    margin-right: 10px;
+}
+
+.btn-warning {
+    background-color: #ece9e0;
+    border-color: #000000;
+}
+
+.btn-danger {
+    background-color: #ece9e0;
+    border-color: #000000;
+}
+
+.btn-danger2 {
+    background-color: #ea632e;
+    border-color: #000000;
+    color : white;
+}
+
+.me-2 {
+    margin-right: .5rem !important;
 }
 
 .modal-header {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
+    background-color: #b8614f;
+    border-bottom: 1px solid #000000;
+    color: #ffffff;
 }
 
 .modal-footer {
-    background-color: #f8f9fa;
-    border-top: 1px solid #dee2e6;
+    background-color: #ffffff;
+    border-top: 1px solid #000000;
 }
