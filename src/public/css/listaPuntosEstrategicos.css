@@ -26,3 +26,35 @@ thead {
     margin-top: 25px;
     font-family: 'Comfortaa', cursive;
 }
+
+.card-header {
+    padding: 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #0799B6;  /* Color plano para el fondo del título */
+    color: white;
+}
+
+.card-body .btn img {
+    height: 20px;
+}
+
+.btn {
+    margin-right: 10px;
+}
+
+.btn-warning {
+    background-color: #ece9e0;
+    border-color: #000000;
+}
+
+.btn-danger {
+    background-color: #ece9e0;
+    border-color: #000000;
+}
+
+.btn-danger2 {
+    background-color: #ea632e;
+    border-color: #000000;
+    color : white;
+}
